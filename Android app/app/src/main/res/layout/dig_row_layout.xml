@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tx_name"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="Akshat"
+        android:textColor="#73D6EF"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Street"
+        android:id="@+id/tx_street"
+        android:layout_below="@+id/tx_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="locality"
+        android:id="@+id/tx_locality"
+        android:layout_below="@+id/tx_street"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="region"
+        android:id="@+id/tx_region"
+        android:layout_below="@+id/tx_locality"
+        android:layout_alignStart="@+id/tx_locality"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="postalcode"
+        android:id="@+id/tx_postalcode"
+        android:layout_below="@+id/tx_region"
+        android:layout_alignStart="@+id/tx_region"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="timings"
+        android:id="@+id/tx_timings"
+        android:layout_below="@+id/tx_postalcode"
+        android:layout_alignStart="@+id/tx_postalcode"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="telno"
+        android:id="@+id/tx_telno"
+        android:layout_below="@+id/tx_timings"
+        android:layout_alignStart="@+id/tx_timings"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="email"
+        android:id="@+id/tx_emailid"
+        android:layout_below="@+id/tx_telno"
+        android:layout_alignStart="@+id/tx_telno"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="website"
+        android:id="@+id/tx_website"
+        android:layout_below="@+id/tx_emailid"
+        android:layout_alignStart="@+id/tx_emailid"
+        android:layout_marginTop="5dp" />
+
+
+</RelativeLayout>

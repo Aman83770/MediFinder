@@ -1,0 +1,62 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.dev.cts.myfragmentexample.MyFragment1"
+    style="@style/applyColor">
+
+
+    <RelativeLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/homeRelLay">
+
+
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/medImageButton"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="111dp"
+            android:background="@drawable/med"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:onClick="medButtonClicked"/>
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/docImageButton"
+            android:layout_marginEnd="27dp"
+            android:background="@drawable/doc"
+            android:layout_alignTop="@+id/medImageButton"
+            android:layout_alignParentEnd="true"
+            android:onClick="docButtonClicked" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/hosImageButton"
+            android:background="@drawable/hos"
+            android:layout_below="@+id/medImageButton"
+            android:layout_alignStart="@+id/medImageButton"
+            android:layout_marginTop="45dp"
+            android:onClick="hosButtonClicked" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/digImageButton"
+            android:layout_alignTop="@+id/hosImageButton"
+            android:layout_alignStart="@+id/docImageButton"
+            android:background="@drawable/dig"
+            android:onClick="digCenButtonClicked"/>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

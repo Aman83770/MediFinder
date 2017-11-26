@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name"
+        android:id="@+id/tx_name"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textColor="#73D6EF"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="telno"
+        android:id="@+id/tx_telno"
+        android:layout_below="@+id/tx_name"
+        android:layout_alignStart="@+id/tx_name"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="street"
+        android:id="@+id/tx_street"
+        android:layout_below="@+id/tx_telno"
+        android:layout_alignStart="@+id/tx_telno"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="locality"
+        android:id="@+id/tx_locality"
+        android:layout_below="@+id/tx_street"
+        android:layout_alignStart="@+id/tx_street"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="region"
+        android:id="@+id/tx_region"
+        android:layout_below="@+id/tx_locality"
+        android:layout_alignStart="@+id/tx_locality"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="postalcode"
+        android:id="@+id/tx_postalcode"
+        android:layout_below="@+id/tx_region"
+        android:layout_alignStart="@+id/tx_region"
+        android:layout_marginTop="5dp" />
+
+
+</RelativeLayout>

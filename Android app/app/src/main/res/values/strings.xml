@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">MediFinder</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="homeFrag">Home</string>
+    <string name="dis">Disclaimer</string>
+    <string name="rateUs">Rate Us</string>
+    <string name="feedback">Feedback</string>
+    <string name="aboutUs">About Us</string>
+    <string name="title_activity_medicines">Medicines</string>
+    <string name="medDisclaimer">The information contained in this application is for educational purpose
+    only and is not a substitute for medical and fitness advice from a doctor, health care providers.
+    Consult a doctor for advice about any course of treatment or medical condition.</string>
+    <string name="userContents">We do not store, supervise and do not claim ownership on any contents
+    created by application users. You acknowledge that clearing application data or uninstalling this application
+    from your device could result in loss of all your data.</string>
+    <string name="userInformation">In connection with use of services, you are required to enter the details of
+        your location. The information provided by you will not be shared or disclosed to anyone in any circumstances.
+    </string>
+    <string name="liability">We have gone to great lengths to ensure that all medical related
+    information in this application and the promoting material relating to it is correct. However
+    we do not assume any responsibility for potential errors and misinformation that this application may
+    still contain, nor for any potential damage or losses arising from relying on or applying
+        the information contained here.</string>
+    <string name="usage">This application is NOT yet licensed with google play. You may use this application
+    solely for your personal use and must not modify reproduce or distribute the software in any way
+    or use it for any commercial purpose. By using this application, you agree to all our terms
+    and conditions mentioned here.</string>
+    <string name="aboutUsFull">MediFinder is a simple and necessary utility at present. The goal of
+    medifinder is simple.It will enhance every persons attention towards their health. MediFinder
+    helps to find best match for doctors,medicines and all medical related information.
+    Pill Identifier and Symptom Checker, attributes of this application can be very useful in any individuals
+    daily life. For more information :www.medifinder.in</string>
+    <string name="title_activity_doctors">Doctors</string>
+    <string name="title_activity_hospitals">Hospitals</string>
+    <string name="title_activity_dig_centre">DigCentre</string>
+    <string name="rateText">Thank you for taking out time to rate us. Your rating is very essential in bringing the
+    best out of us.</string>
+    <string name="title_activity_symptom_checker">symptomChecker</string>
+    <string name="title_activity_pill_identifier">pillIdentifier</string>
+    <string name="title_activity_sym">sym</string>
+    <string name="title_activity_animation">animation</string>
+    <string name="title_activity_start_animation">startAnimation</string>
+    <string name="title_activity_splash_screen">splash_screen</string>
+    <string name="introText">Medifinder</string>
+    <string name="title_activity_male_sym_checker">maleSymChecker</string>
+    <string name="title_activity_female_sym_checker">femaleSymChecker</string>
+
+    <string-array name="Shape">
+
+        <item>Round</item>
+        <item>Oblong</item>
+        <item>Oval</item>
+        <item>Square</item>
+        <item>Rectangle</item>
+        <item>Diamond</item>
+        <item>3 Sided</item>
+        <item>5 Sided</item>
+        <item>6 Sided</item>
+        <item>Other</item>
+
+    </string-array>
+
+    <string-array name="medColor">
+        <item>White</item>
+        <item>Off White</item>
+        <item>Clear</item>
+        <item>Black</item>
+        <item>Gray</item>
+        <item>Brown</item>
+        <item>Tan</item>
+        <item>Red</item>
+        <item>Pink</item>
+        <item>Orange</item>
+        <item>Peach</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Purple</item>
+    </string-array>
+    <string name="title_activity_display_dig_c">displayDigC</string>
+    <string name="title_activity_pop_up">PopUp</string>
+    <string name="title_activity_sym_display">SymDisplay</string>
+</resources>

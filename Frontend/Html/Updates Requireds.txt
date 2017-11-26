@@ -1,0 +1,28 @@
+#Chemist Database->
+1)strength
+2)Color
+3)Symptoms
+4)Remove Price and Upload image.
+
+#Doctor Database->
+1)Associate Hospital
+2)Days
+3)Location
+
+#Hospital->
+1)Name
+2)City
+3)Address
+4)Sector {Private/Govt.}
+5)Timing
+6)Telephone Number
+
+#Diagnostic centre 
+1) Name
+2) City
+3) Address
+4) Certification
+5) Timing
+6) Tests available
+7) Price
+8) Contact number

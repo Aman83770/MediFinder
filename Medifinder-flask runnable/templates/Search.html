@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" manifest="developers.appcache">
+<head>
+    <title>Search | MediFinder | Better Information, Better Health </title>
+    <link rel="shortcut icon" href="..\static\Images\login.png" type="image/png">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Find doctor in my area,doctor finder,drugs finder,my health status,chemist near my home,locate medicine,locate doctor,buy medicine,">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="../static/Script/jquery.cookie.js"></script>
+    <script src="../static/Script/Signin.js"></script>
+    <script src="../static/Script/Dropdown.js"></script>
+    <script src="../static/Script/Scripts.js"></script>
+    <script src="../static/Script/Routes.js"></script>
+    <script src="../static/Script/Loading.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/Css/MediFinder.css">
+    <link rel="stylesheet" type="text/css" href="../static/Css/Developers.css">
+    <link href="../static/Css/Styles.css" rel="stylesheet">
+    <link href="../static/Css/Search.css" rel="stylesheet">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script language="JavaScript" src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script>
+      function mypath()
+      {
+        var pathname = window.location.pathname; // Returns path only
+        if (pathname=="/PhysicianDirectory") {
+          $("#SearchAll").removeClass("active");
+          $("#t1").removeClass("active");
+          $("#SearchDoctor").addClass("active");
+          $("#t2").addClass("active");
+        }
+        else if (pathname=="/FindStoreHere") {
+          $("#SearchAll").removeClass("active");
+          $("#t1").removeClass("active");
+          $("#SearchChemistStore").addClass("active"); 
+          $("#t3").addClass("active");
+        }
+      }
+    </script>
+</head>
+<body onload="mypath()">
+<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+  <div class="container" style="width:100%;">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+        <!-- <span class="sr-only">Toggle navigation</span> -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-collapsible">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/" style="color:white !important;font-weight: 400 !important;font-size=22px !important;">MediFinder</a></li>
+        <li><a href="/#section2">Drugs</a></li>
+        <li><a href="/#section3">Doctor</a></li>
+        <li><a href="/#section4">Pills Identifier</a></li>
+        <li><a href="/#section5">Symptoms Checker</a></li>
+            <li class="dropdown" >
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="/#section6">Health A-Z</a></li>
+              <li class="divider"></li>
+              <li><a href="/TopStories">Top Stories</a></li>
+              <li class="divider"></li>
+                <li><a href="/AboutUs">About Us</a></li>
+                <li class="divider"></li>
+                <li><a href="/Help">Help</a></li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#search"><i class="fa fa-search"></i></a></li>
+        <li><a href="#" class="show-login" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-log-in"></span> Member Login</a></li>
+        <li><a href="#" class="show-register" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </ul>
+    </nav>
+
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="Medicine, Doctor, Hospital, Diagnostic Centre..." />
+        <button type="submit" class="btn btn-primary search_nav">Search</button>
+    </form>
+</div>
+
+<!-- BEGIN # MODAL LOGIN -->
+    <div class="modal fade" id="login-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <img class="img-circle" id="img_logo" src="../static/Images/login.png">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div id="div-forms">
+                    <form id="login-form">
+                        <div class="modal-body">
+                            <input id="login_username" class="form-control" type="text" placeholder="Username" required>
+                            <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">.
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+                            <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link show-forgot-password">Lost Password?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link show-register">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="forgot-form">
+                        <div class="modal-body">
+                        <label style="color:#375A7F;">Type your e-mail.</label>
+                            <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link show-login">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link show-register">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form">
+                        <div class="modal-body">
+                            <div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+                            <input id="FirstName" class="form-control" name="FirstName" class="form-control" type="text" placeholder="First Name" class="Input" required="">
+                            <input id="LastName" class="form-control" name="LastName" type="text" placeholder="Last Name" class="Input">
+                           
+                                <input type="radio" name="Gender" value="Male" style="margin:10px;">  Male
+                                <input type="radio" name="Gender" value="Female"style="margin:10px;"> Female
+                                <input type="radio" name="Gender" value="Other"style="margin:10px;">  Other
+                            <input id="email" class="form-control" name="Email" type="email" placeholder="Email Id" class="Input" required="" style="margin-bottom:8px;">
+                            <label style="color:red;font-size:14px;font-weight:100;display:none;margin-bottom:2px;" id="ErrorMessage">&nbsp&nbsp&nbspOops! User already exists...</label>
+                            <select id="WorkArea" class="form-control" name="WorkArea" class="Input" required="">
+                                <option value="none" class="none">I am ...</option>
+                                <option value="Doctor" class="doctor">Doctor</option>
+                                <option value="Chemist" class="chemist">Chemist</option>
+                                <option value="Hospital" class="hospital">Hospital</option>
+                                <option value="Diagnostic Centre" class="diagnostic">Diagnostic Centre</option>
+                            </select>
+                            <input id="Speciality" class="form-control select-workarea" name="Speciality" type="text" placeholder="Speciality" class="Input" >
+                            <input id="StoreName" class="form-control select-workarea" name="StoreName" type="text" placeholder="Store Name" class="Input">
+                            <input id="HospitalName" class="form-control select-workarea" name="HospitalName" type="text" placeholder="Hospital Name" class="Input">
+                            <input id="DiagnosticName" class="form-control select-workarea" name="DiagnosticName" type="text" placeholder="Diagnostic Centre Name" class="Input">
+                            <input id="Password" class="form-control" name="Password" type="password" placeholder="Password" class="Input  pass-confirm Password" minlength="6" required="">
+                            <input id="PasswordConfirm" class="form-control" name="Re-Enter Password" type="password" placeholder="Re-Enter Password" class="Input pass-confirm ConfirmPassword" minlength="6" required="">
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" id="signup-submit-btn" class="btn btn-primary btn-lg btn-block" onclick="waitingDialog.show('Signing up...');">Register</button>
+                                <!-- <button onclick="waitingDialog.show();">Wait</button> -->
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link show-login">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link show-forgot-password">Lost Password?</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Register Form -->
+                </div>
+                <!-- End # DIV Form -->
+            </div>
+        </div>
+    </div>
+    <!-- END # MODAL LOGIN -->
+  
+<!-- End Header -->
+
+    </div>
+  </div>
+</nav>
+<section class="container-fluid" id="section4">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="showresults">
+<!-- Nav tabs -->
+          <div class="card">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" id="t1" class="active"><a href="#SearchAll" aria-controls="SearchAll" role="tab" data-toggle="tab">All</a></li>
+                <li role="presentation"  id="t2"><a href="#SearchDoctor" aria-controls="SearchDoctor" role="tab" data-toggle="tab">Doctors</a></li>
+                <!-- <li role="presentation"><a href="#SearchDrugs" aria-controls="SearchDrugs" role="tab" data-toggle="tab">Drugs</a></li> -->
+                <li role="presentation"  id="t3"><a href="#SearchChemistStore" aria-controls="SearchChemistStore" role="tab" data-toggle="tab">Chemist Stores</a></li>
+                <li role="presentation" ><a href="#SearchHospital" aria-controls="SearchHospital" role="tab" data-toggle="tab">Hospitals</a></li>
+                <li role="presentation" ><a href="#SearchDiagnosticCentre" aria-controls="SearchDiagnosticCentre" role="tab" data-toggle="tab">Diagnostic Centres</a></li>
+            </ul>
+<!-- Tab panes -->
+            <div class="tab-content ResultDisplay">
+              <div role="tabpanel" class="tab-pane active" id="SearchAll">
+                <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing " id="ForDoctor">
+                  <div class="media">
+                    <a class="pull-left" href="#" target="_parent">
+                      <img alt="image" class=" profile-img" src="../static/Images/Doctor1.png">
+                    </a>
+                    <div class="media-body fnt-smaller">
+                      <a href="#" target="_parent"></a>
+                      <h4 class="media-heading" style="margin-top:10px;">
+                        <a href="#" target="_parent">Govind Upadhyay</a><small class="pull-right">Doctor</small>
+                      </h4>
+                      <h3 id="speciality" style="font-size:15px;margin-top:5px;">Neurosurgeon</h3>
+                      <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                      <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>8:00 AM-1:00 PM</li>
+                                    <li style="list-style: none">|</li>
+                                    <li>3:00 PM-8:00 AM</li>
+                                </ul>
+                      <p class="hidden-xs" id="address">Jaypee Institute of Information Technology,A-10, Sector-62, , Noida-201 309, Uttar Pradesh, India.</p> 
+                      <span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Blue Bell</span>
+                    </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing" >
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_parent">
+                        <img alt="image" class="profile-img" src="http://www.perkinswill.com/sites/default/files/project-imagery/rush_main1_0.jpg">
+                      </a>
+                      <div class="media-body fnt-smaller">
+                        <a href="#" target="_parent"></a>
+                        <h4 class="media-heading" style="margin-top:10px;">
+                          <a href="#" target="_parent">Apollo Hospitals</a><small class="pull-right" id="field">Hospital</small>
+                        </h4>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353" id="KeySpecialities">
+                          <li>Heart</li>
+                          <li style="list-style: none">|</li>
+                          <li>ORTHOPEDICS</li>
+                          <li style="list-style: none">|</li>
+                          <li>NEUROSURGERY</li>
+                        </ul>
+                        <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                      <li>8:00 AM-1:00 PM</li>
+                                      <li style="list-style: none">|</li>
+                                      <li>3:00 PM-8:00 AM</li>
+                                  </ul>
+                        <p class="hidden-xs" id="address"><i class="fa fa-map-marker"></i>&nbspSarita Vihar, Delhi Mathura Road, New Delhi - 110076 (INDIA)</span></p> 
+                        <a href="http://www.apollohospdelhi.com/"><span class="fnt-smaller fnt-arial">http://www.apollohospdelhi.com/</span>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing" >
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_parent">
+                        <img alt="image" class="profile-img" src="http://www.epscommittees.org/wp-content/uploads/2014/07/chemist_1.jpg">
+                      </a>
+                      <div class="media-body fnt-smaller">
+                        <a href="#" target="_parent"></a>
+                        <h4 class="media-heading" style="margin-top:10px;">
+                          <a href="#" target="_parent">Shipra Chemist Store</a><small class="pull-right" id="field">Chemist Store</small>
+                        </h4>
+                        <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                          <li>8:00 AM-1:00 PM</li>
+                          <li style="list-style: none">|</li>
+                          <li>3:00 PM-8:00 AM</li>
+                        </ul>
+                        <p class="hidden-xs" id="address"><i class="fa fa-map-marker"></i>&nbspSarita Vihar, Delhi Mathura Road, New Delhi - 110076 (INDIA)</span></p> 
+                        <a href="http://www.apollohospdelhi.com/"><span class="fnt-smaller fnt-arial">http://www.shiprachemisrtstore.com/</span>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_parent">
+                        <img alt="image" class=" profile-img" src="http://3.imimg.com/data3/XF/WW/MY-8928642/blood-count-test-250x250.jpg">
+                      </a>
+                      <div class="media-body fnt-smaller">
+                        <a href="#" target="_parent"></a>
+                        <h4 class="media-heading" style="margin-top:10px;">
+                          <a href="#" target="_parent">PathLab Diagnostic Centre</a><small class="pull-right" id="field">Diagnostic Centre</small>
+                        </h4>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353" id="KeySpecialities">
+                          <li>BLOOD TEST</li>
+                          <li style="list-style: none">|</li>
+                          <li>CHOLESTEROL</li>
+                          <li style="list-style: none">|</li>
+                          <li>METHOTREXATE</li>
+                        </ul>
+                        <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                      <li>8:00 AM-1:00 PM</li>
+                                      <li style="list-style: none">|</li>
+                                      <li>3:00 PM-8:00 AM</li>
+                                  </ul>
+                        <p class="hidden-xs" id="address"><i class="fa fa-map-marker"></i>&nbspSarita Vihar, Delhi Mathura Road, New Delhi - 110076 (INDIA)</span></p> 
+                        <a href="https://www.lalpathlabs.com/"><span class="fnt-smaller fnt-arial">www.lalpathlabs.com/</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+<!-- Tab panel for Doctor -->
+                <div role="tabpanel" class="tab-pane " id="SearchDoctor">
+                  <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_parent">
+                        <img alt="image" class=" profile-img" src="../static/Images/Doctor1.png">
+                      </a>
+                      <div class="media-body fnt-smaller" id="ForDoctor">
+                        <a href="#" target="_parent"></a>
+                        <h4 class="media-heading" style="margin-top:10px;">
+                          <a href="#" target="_parent">Govind Kumar Upadhyay</a><small class="pull-right" id="field">Doctor</small>
+                        </h4>
+                        <h3 id="speciality" style="font-size:15px;margin-top:5px;">Neurosurgeon</h3>
+                        <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                      <li>8:00 AM-1:00 PM</li>
+                                      <li style="list-style: none">|</li>
+                                      <li>3:00 PM-8:00 AM</li>
+                                  </ul>
+                        <p class="hidden-xs" id="address">Jaypee Institute of Information Technology,A-10, Sector-62, , Noida-201 309, Uttar Pradesh, India.</p> 
+                        <a href="http://www.apollohospdelhi.com/"><span class="fnt-smaller fnt-arial">http://www.medifinder.xyz/</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+<!-- Tab panel for Drugs -->
+<!--                 <div role="tabpanel" class="tab-pane" id="SearchDrugs">
+
+                </div>
+ -->
+ <!-- Tab panel for Chemist Store -->
+                 <div role="tabpanel" class="tab-pane" id="SearchChemistStore">
+                  <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing" id="ForHospital">
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_parent">
+                        <img alt="image" class=" profile-img" src="http://www.epscommittees.org/wp-content/uploads/2014/07/chemist_1.jpg">
+                      </a>
+                      <div class="media-body fnt-smaller">
+                        <a href="#" target="_parent"></a>
+                        <h4 class="media-heading" style="margin-top:10px;">
+                          <a href="#" target="_parent">Shipra Chemist Store</a><small class="pull-right" id="field">Chemist Store</small>
+                        </h4>
+                        <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                          <li>8:00 AM-1:00 PM</li>
+                          <li style="list-style: none">|</li>
+                          <li>3:00 PM-8:00 AM</li>
+                        </ul>
+                        <p class="hidden-xs" id="address"><i class="fa fa-map-marker"></i>&nbspSarita Vihar, Delhi Mathura Road, New Delhi - 110076 (INDIA)</span></p> 
+                        <a href="http://www.apollohospdelhi.com/"><span class="fnt-smaller fnt-arial">http://www.shiprachemisrtstore.com/</span>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+<!-- Tab panel for Hospital -->
+                <div role="tabpanel" class="tab-pane" id="SearchHospital">
+                  <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_parent">
+                        <img alt="image" class=" profile-img" src="http://www.perkinswill.com/sites/default/files/project-imagery/rush_main1_0.jpg">
+                      </a>
+                      <div class="media-body fnt-smaller">
+                        <a href="#" target="_parent"></a>
+                        <h4 class="media-heading" style="margin-top:10px;">
+                          <a href="#" target="_parent">Apollo Hospitals</a><small class="pull-right" id="field">Hospital</small>
+                        </h4>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353" id="KeySpecialities">
+                          <li>Heart</li>
+                          <li style="list-style: none">|</li>
+                          <li>ORTHOPEDICS</li>
+                          <li style="list-style: none">|</li>
+                          <li>NEUROSURGERY</li>
+                        </ul>
+                        <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                      <li>8:00 AM-1:00 PM</li>
+                                      <li style="list-style: none">|</li>
+                                      <li>3:00 PM-8:00 AM</li>
+                                  </ul>
+                        <p class="hidden-xs" id="address"><i class="fa fa-map-marker"></i>&nbspSarita Vihar, Delhi Mathura Road, New Delhi - 110076 (INDIA)</span></p> 
+                        <a href="http://www.apollohospdelhi.com/"><span class="fnt-smaller fnt-arial">http://www.apollohospdelhi.com/</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+<!-- Tab panel for Diagnostic Centre -->
+                <div role="tabpanel" class="tab-pane" id="SearchDiagnosticCentre">
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_parent">
+                        <img alt="image" class=" profile-img" src="http://3.imimg.com/data3/XF/WW/MY-8928642/blood-count-test-250x250.jpg">
+                      </a>
+                      <div class="media-body fnt-smaller">
+                        <a href="#" target="_parent"></a>
+                        <h4 class="media-heading" style="margin-top:10px;">
+                          <a href="#" target="_parent">PathLab Diagnostic Centre</a><small class="pull-right" id="field">Diagnostic Centre</small>
+                        </h4>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353" id="KeySpecialities">
+                          <li>BLOOD TEST</li>
+                          <li style="list-style: none">|</li>
+                          <li>CHOLESTEROL</li>
+                          <li style="list-style: none">|</li>
+                          <li>METHOTREXATE</li>
+                        </ul>
+                        <p style="font-size:20px;"><i class="fa fa-clock-o" style="color:#2c3e52;"></i>&nbspTiming</p>
+                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                      <li>8:00 AM-1:00 PM</li>
+                                      <li style="list-style: none">|</li>
+                                      <li>3:00 PM-8:00 AM</li>
+                                  </ul>
+                        <p class="hidden-xs" id="address"><i class="fa fa-map-marker"></i>&nbspSarita Vihar, Delhi Mathura Road, New Delhi - 110076 (INDIA)</span></p> 
+                        <a href="https://www.lalpathlabs.com/"><span class="fnt-smaller fnt-arial">www.lalpathlabs.com/</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<footer id="footer">
+  <div class="container">    
+    <div class="footer_list">          
+        <h4>Information</h4>
+        <ul class="footer_ui">
+            <li><a href="/Services">Services</a></li>
+            <li><a href="/Benefits">Benefits</a></li>
+            <li><a href="/#section8">Developers</a></li>
+        </ul> 
+    </div>
+    <div class="footer_list">          
+        <h4>Follow Us</h4>
+        <ul class="footer_ui">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Google+</a></li>
+        </ul> 
+    </div>
+    <div class="footer_list">          
+        <h4>Contact Us</h4>
+        <ul class="footer_ui">
+            <li><a href="#">Email</a></li>
+            <li><a href="#" class="show-register" data-toggle="modal" data-target="#login-modal">Join Us</a></li>
+            <li><a href="/Support">Support</a></li>
+        </ul> 
+    </div>
+    <div class="footer_list">          
+        <h4>Customer Service</h4>
+        <ul class="footer_ui">
+            <li><a href="/AboutUs">About Us</a></li>
+            <li><a href="/Feedback">Feedback</a></li>
+            <li><a href="/PrivacyPolicy">Privacy Policy</a></li>
+        </ul> </div>
+    </div>
+    <center>
+        <h3 style="color: #eee;font-family: sans-serif;margin-bottom:0px;font-size:14px;cursor:default">&copy Copyright 2015 MediFinder Group | All rights reserved.</h3>
+    </center>
+  </div>
+</footer>
+<div class="bg_load"></div>
+<div class="wrapper">
+    <div class="inner">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+    </div>
+</div>
+<script type="text/javascript">
+        
+    </script>
+</body>
+</html>

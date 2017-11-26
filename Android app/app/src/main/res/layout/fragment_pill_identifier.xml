@@ -1,0 +1,112 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.akshatsharma.medifinder.pillIdentifier"
+    style="@style/applyColor">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Pill Identifier"
+            android:id="@+id/textView24"
+            android:textSize="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#73D6EF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Search By Imprints, Shape and Color"
+            android:id="@+id/textView28"
+            android:layout_below="@+id/textView24"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Imprint"
+            android:id="@+id/textView29"
+            android:layout_marginStart="22dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView28"
+            android:layout_alignStart="@+id/textView28"
+            android:layout_marginTop="32dp"
+            android:textColor="#73D6EF" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imprint"
+            android:layout_alignBottom="@+id/textView29"
+            android:layout_alignEnd="@+id/textView24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Shape"
+            android:id="@+id/textView30"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/textView29"
+            android:textColor="#73D6EF" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shapeSpinner"
+            android:layout_alignTop="@+id/textView30"
+            android:layout_alignStart="@+id/imprint"
+            android:layout_marginRight="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Color"
+            android:id="@+id/textView31"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_alignTop="@+id/colorSpinner"
+            android:layout_alignStart="@+id/textView30"
+            android:textColor="#73D6EF" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/colorSpinner"
+            android:layout_marginRight="15dp"
+            android:layout_below="@+id/shapeSpinner"
+            android:layout_alignStart="@+id/shapeSpinner"
+            android:layout_marginTop="42dp" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:id="@+id/displayButton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="#73d6ef"
+            android:onClick="displayNow" />
+
+    </RelativeLayout>
+</FrameLayout>

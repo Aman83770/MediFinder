@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.akshatsharma.medifinder" >
+
+    <uses-sdk
+        android:maxSdkVersion="22"
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="ANDROID.PERMISSION.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Medicines"
+            android:label="@string/title_activity_medicines" >
+        </activity>
+        <activity
+            android:name=".Doctors"
+            android:label="@string/title_activity_doctors" >
+        </activity>
+        <activity
+            android:name=".Hospitals"
+            android:label="@string/title_activity_hospitals" >
+        </activity>
+        <activity
+            android:name=".DigCentre"
+            android:label="@string/title_activity_dig_centre" >
+        </activity>
+        <activity
+            android:name=".splash_screen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".maleSymChecker"
+            android:label="@string/title_activity_male_sym_checker" >
+        </activity>
+        <activity
+            android:name=".femaleSymChecker"
+            android:label="@string/title_activity_female_sym_checker" >
+        </activity>
+        <activity
+            android:name=".PopUp"
+            android:label="@string/title_activity_pop_up"
+            android:theme="@style/AppTheme.CustomTheme" >
+        </activity>
+        <activity
+            android:name=".SymDisplay"
+            android:label="@string/title_activity_sym_display"
+            android:theme="@style/AppTheme.CustomTheme">
+        </activity>
+    </application>
+
+</manifest>
